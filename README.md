@@ -1,2 +1,2 @@
 # rocky_homepage_
-Website for Rocky, my DNAxCAT sona.
+Website of Rocky, my DNAxCAT sona.
