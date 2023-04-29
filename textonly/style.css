@@ -1,0 +1,75 @@
+body {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.rocky_banner {
+    width: 100%;
+}
+
+.links {
+    background-size: 32px;
+    height: 64px;
+    margin: 0 auto;
+
+}
+
+.links>li {
+    float: left;
+    list-style: none;
+    line-height: 64px;
+    margin-left: 18px;
+}
+
+
+
+.r_pf>img {
+    height: 288px;
+}
+
+.r_sc>.r_pf {
+    float: left;
+    overflow: hidden;
+}
+
+.r_sc {
+    overflow: hidden;
+    margin: auto;
+    width: max-content;
+}
+
+.r_scr {
+    overflow: hidden;
+    margin: auto;
+    width: max-content;
+}
+
+
+.r_scr>.r_pf {
+    float: right;
+    overflow: hidden;
+}
+
+.patting_uwu {
+    height: 288px;
+}
+
+.footer {
+    text-align: left;
+}
+
+.footer_links>li {
+    float: left;
+    list-style: none;
+    overflow: hidden;
+}
+
+.footer_links>li:nth-child(2),
+.footer_links>li:nth-child(3) {
+    margin-left: 16px;
+}
+
+.footer_links {
+    overflow: hidden;
+    padding-left: 0;
+}

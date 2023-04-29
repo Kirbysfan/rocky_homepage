@@ -1,0 +1,42 @@
+.l_main {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.l_pic {
+    width: 100%;
+    max-width: 1024px;
+}
+
+.l_disabled {
+    pointer-events: none;
+    color: gray;
+}
+
+.l_sect {
+    max-width: 768px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.l_select {
+    min-width: 256px;
+    width: 360px;
+    background-color: #00b0ff;
+    margin: 8px;
+    border-radius: 16px;
+}
+
+.contain {
+    background-color: #00b0ff;
+    margin: 0;
+    padding: 16px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}

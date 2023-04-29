@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="style/main.css">
+    <link rel="stylesheet" type="text/css" href="style/lang.css">
+    <title>Choose language...</title>
+</head>
+
+<body class="body text-center">
+    <div class="l_main">
+        <img class="l_pic" src="rocky_banner.webp">
+        <div class="contain">
+            <p>Choose language...</p>
+            <div class="l_sect">
+                <div class="l_select">
+                    <a href="sc/index.html">简体中文</a>
+                    <p>我是洛奇，很高兴见到你！</p>
+                </div>
+                <div class="l_select">
+                    <a href="tc/index.html">繁體中文</a>
+                    <p>我是洛奇，很高興見到你！</p>
+                </div>
+                <div class="l_select">
+                    <a href="en/index.html">English</a>
+                    <p>I'm Rocky, nice to meet you!</p>
+                </div>
+                <div class="l_select">
+                    <a onclick="JPwarn()" href="jp/index.html">日本語 (Alpha)</a>
+                    <p>はじめまして、ロッキーです！</p>
+                </div>
+            </div>
+            <p>Repo: <span class="info"><a
+                        href="http://kirbysfan.github.io/rocky_homepage/lang_new.html">Github</a></span>&nbsp;|&nbsp;
+                <span class="info"><a
+                        href="http://kirbysfan.gitee.io/rocky_homepage/lang_new.html">Gitee</a></span>&nbsp;|&nbsp;
+                <span class="info"><a href="https://rocky.sn-m.xyz/lang_new.html">CloudMoe</a></span>
+            </p>
+            <p id="detail">&nbsp;</p>
+        </div>
+        <div class="r_content">
+            <div id="footer"></div>
+        </div>
+
+    </div>
+    <script src="en/footer/footer.js"></script>
+    <script>
+        var detail = document.getElementById("detail");
+        const info = document.querySelectorAll(".info");
+        var value;
+        var type;
+        info[0].setAttribute("onmouseenter", "type = 1; display(type)");
+        info[1].setAttribute("onmouseenter", "type = 2; display(type)");
+        info[2].setAttribute("onmouseenter", "type = 3; display(type)");
+        function display(value) {
+            if (value === 1) {
+                detail.innerHTML = "Repo on Github.";
+            }
+            if (value === 2) {
+                detail.innerHTML = "Repo on Gitee.";
+            }
+            if (value === 3) {
+                detail.innerHTML = "Chihiro's mirror based on CloudFlare."
+            }
+        }
+        function JPwarn() {
+            alert(
+                "Currently, Japanese version of Rocky's personal website was made done through translation software."
+                + '\n' +
+                "If you found issue, please point out through Issues or other methods, thank you."
+                + '\n' +
+                "現在、ロッキーの個人サイトの日本語版は、翻訳ソフトで作成されています。"
+                + '\n' +
+                "もし問題があれば、「Issues」などでご指摘いただければと思いますので、よろしくお願いいたします。"
+            );
+        }
+    </script>
+</body>
+
+</html>

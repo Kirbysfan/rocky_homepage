@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Please wait...</title>
+</head>
+
+<body>
+    <p>This place requires JavaScript.</p>
+    <p>If you haven't been took to the main site, click <span><a class="lang_new.html">here</a></span> , or try enabling
+        Javascript
+        (if disabled) or upgrading your
+        browser.</p>
+    <p>If you contiune without Javascript, you will encounter problem such as missing navbar and footer since they're
+        all rendered through Javascript now.</p>
+    <p>If you're coming with a text only browser, here's a version specially designed for such kind of browsers.</p>
+    <a href="textonly/index.html">Rocky's personal website for text only browsers</a>
+</body>
+<script>
+    function browsercheck() {
+        var ua = navigator.userAgent.toLowerCase();
+        if (ua.indexOf('links') > -1 || ua.indexOf('lynx') > -1) {
+            window.location = 'textonly/index.html';
+        }
+    }
+    browsercheck();
+    var language = navigator.language.toLowerCase();
+    switch (language) {
+        case "zh-cn":
+            window.location = 'sc/index.html';
+            break;
+        case "zh-tw":
+            window.location = 'tc/index.html';
+            break;
+        case "zh-hk":
+            window.location = 'tc/index.html';
+            break;
+        case "ja-jp":
+            alert(
+                "Currently, Japanese version of Rocky's personal website was made done through translation software."
+                + '\n' +
+                "If you found issue, please point out through Issues or other methods, thank you."
+                + '\n' +
+                "現在、ロッキーの個人サイトの日本語版は、翻訳ソフトで作成されています。"
+                + '\n' +
+                "もし問題があれば、「Issues」などでご指摘いただければと思いますので、よろしくお願いいたします。"
+            );
+            window.location = 'jp/index.html';
+            break;
+        default:
+            window.location = 'en/index.html';
+            break;
+    }
+</script>
+
+</html>

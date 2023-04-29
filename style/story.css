@@ -1,0 +1,76 @@
+.comingsoon_img {
+    height: 192px;
+}
+
+.comingsoon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.story_sect {
+    text-align: left;
+    width: max-content;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    min-height: 128px;
+}
+
+.story_sect>*,
+.story_sect>*>*>* {
+    margin: 0;
+}
+
+.story_sect>*>a {
+    text-decoration: none;
+}
+
+#StoryList {
+    display: flex;
+    flex-direction: column;
+    width: max-content;
+    max-width: 1024px;
+    margin: auto;
+}
+
+.sc_text {
+    display: flex;
+    flex-direction: column;
+}
+
+.s_hoshi {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    margin-right: 16px;
+    margin-bottom: 8px;
+    transition: transform 768ms;
+}
+
+.story_sect:hover>.s_hoshi {
+    transform: rotate(360deg);
+}
+
+.sc_text>a {
+    color: white !important;
+}
+
+
+
+@media(max-width: 768px) {
+    .story_sect {
+        width: 100%;
+        margin: auto;
+    }
+
+    #StoryList {
+        justify-content: center;
+        width: auto;
+    }
+
+    .comingsoon {
+        flex-direction: column;
+    }
+}

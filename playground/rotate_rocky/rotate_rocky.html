@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spinning Rocky</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../../bootstrap/css/bootstrap.css">
+</head>
+
+<body id="body">
+    <div class="main">
+        <div id="rotateframe">
+            <img src="1.png" id="rotate"
+                alt="This image in the site will be spinning. Type a number larger than 0, and then click start.">
+        </div>
+        <br>
+        <div id="dash">
+            <label><span>Speed:</span> <input type="number" id="time"> ms/term</label>
+            <div class="control">
+                <button class="btn btn-primary" id="start">Start</button>
+                <button class="btn btn-primary" id="stop">Stop</button>
+                <button class="btn btn-primary" id="hide">Hide</button>
+            </div>
+            <span>Note: 1s = 1000ms</span><br>
+        </div>
+        <span id="warn">&nbsp;</span>
+    </div>
+</body>
+<script>
+    const bgm = new Audio("hhxmas.ogg");
+    const rgbbgm = new Audio("ts4.ogg");
+    const rocky = document.getElementById("rotate");
+    const rocky_f = document.getElementById("rotateframe");
+    const time = document.getElementById("time");
+    const stop = document.getElementById("stop");
+    const start = document.getElementById("start");
+    const hide = document.getElementById("hide");
+    const dash = document.getElementById("dash");
+    const warn = document.getElementById("warn");
+    var playstat = false;
+    var rgbstat = false;
+    var warnMsg = "&nbsp";
+    var rgb = 0;
+    function rgbcount() {
+        rgb = 0;
+    }
+    setInterval("rgbcount()", 5000);
+    function rgbOpen() {
+        document.getElementById("body").style.backgroundColor = "black"
+        document.getElementById("body").style.color = "white";
+        rocky.style.animation = "rotate " + time.value + "ms linear infinite running, rgb 2s linear infinite";
+        start.style.animation = "rgb 2s linear infinite";
+        stop.style.animation = "rgb 2s linear infinite";
+        hide.style.animation = "rgb 2s linear infinite";
+    }
+    function rgbClose() {
+        document.getElementById("body").style.backgroundColor = "white"
+        document.getElementById("body").style.color = "black";
+        rocky.style.animation = "rotate " + time.value + "ms linear infinite running";
+        start.style.animation = "";
+        stop.style.animation = "";
+        hide.style.animation = "";
+    }
+    function bgmplay() {
+        rgbbgm.pause();
+        rgbbgm.currentTime = 0;
+        playstat = true;
+        bgm.loop = true;
+        bgm.play();
+
+    }
+    function rgbbgmplay() {
+        playstat = true;
+        bgm.pause();
+        bgm.currentTime = 0;
+        rgbbgm.loop = true;
+        rgbbgm.play();
+
+    }
+    function rotate() {
+        rgb++;
+        if (time.value >= 0 & time.value != "") {
+            if (rgb < 7) {
+                if (rgbstat === false) {
+                    rocky.style.animation = "rotate " + time.value + "ms linear infinite running";
+                }
+                else {
+                    rocky.style.animation = "rotate " + time.value + "ms linear infinite running, rgb 2s linear infinite";
+                }
+            }
+            else {
+                rgbstat = !rgbstat;
+                if (rgbstat === true) {
+                    rgbOpen();
+                }
+                else {
+                    rgbClose();
+                    rocky.style.animation = "rotate " + time.value + "ms linear infinite running";
+                }
+                rgb = 0;
+            }
+            if (rgbstat === true) {
+                if (playstat === true) {
+                    playstat = !playstat;
+                }
+
+                if (playstat === false) {
+                    rgbbgmplay();
+                }
+            }
+            else {
+                if (playstat === true) {
+                    playstat = !playstat;
+                }
+                if (playstat === false) {
+                    bgmplay();
+                }
+
+            }
+
+            warn.innerHTML = "&nbsp;";
+        }
+        else {
+            warn.innerHTML = "The time should be larger than 0.";
+        }
+    }
+    function stoprotate() {
+        rgbClose();
+        rgbstat = false;
+        rocky.style.animation = "";
+        playstat = false;
+        bgm.pause();
+        rgbbgm.pause();
+        bgm.currentTime = 0;
+        rgbbgm.currentTime = 0;
+        warn.innerHTML = "&nbsp;";
+    }
+    function hidecontrol() {
+        dash.style.display = "none";
+        warnMsg = warn.innerHTML;
+        warn.innerHTML = "Double click Rocky to return.";
+    }
+    function showcontrol() {
+        dash.style.display = "block";
+        warn.innerHTML = warnMsg;
+    }
+    start.onclick = rotate;
+    stop.onclick = stoprotate;
+    hide.onclick = hidecontrol;
+    rocky_f.ondblclick = showcontrol;
+</script>
+
+</html>

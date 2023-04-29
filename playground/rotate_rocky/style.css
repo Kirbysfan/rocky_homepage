@@ -1,0 +1,89 @@
+.main {
+    max-width: 640px;
+    margin: 0 auto;
+    text-align: center;
+    font-family: 'Noto Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+#body {
+    transition: background-color 3s, color 3s;
+    color: black;
+}
+
+#warn {
+    animation: warn 4s linear infinite;
+}
+
+#rotateframe {
+    width: 100%;
+}
+
+#rotate {
+    width: 100%;
+}
+
+.control {
+    margin: 16px auto;
+}
+
+@keyframes rgb {
+    0% {
+        filter: drop-shadow(0 0 48px blue);
+    }
+
+    33% {
+        filter: drop-shadow(0 0 48px red);
+    }
+
+    66% {
+        filter: drop-shadow(0 0 48px green);
+    }
+
+    100% {
+        filter: drop-shadow(0 0 48px blue);
+    }
+}
+
+@keyframes warn {
+    0% {
+        opacity: 100%;
+    }
+
+    25% {
+        opacity: 0%;
+    }
+
+    50% {
+        opacity: 100%;
+    }
+
+    75% {
+        opacity: 0%;
+    }
+
+    100% {
+        opacity: 100%;
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotateY(0deg);
+    }
+
+    25% {
+        transform: rotateY(90deg);
+    }
+
+    50% {
+        transform: rotateY(180deg);
+    }
+
+    75% {
+        transform: rotateY(270deg);
+    }
+
+    100% {
+        transform: rotateY(360deg);
+    }
+}

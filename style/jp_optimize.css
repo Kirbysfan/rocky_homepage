@@ -1,0 +1,5 @@
+@media (max-width: 576px) {
+    .title>h1>p {
+        font-size: 36px;
+    }
+}

@@ -1,0 +1,320 @@
+@font-face {
+    font-family: ProductSans;
+    src: url(../ProductSans-Regular.ttf);
+}
+
+@font-face {
+    font-family: ProductSansBold;
+    src: url(../ProductSans-Bold.ttf);
+}
+
+* {
+    color: white;
+    font-family: ProductSans;
+}
+
+.rocky_scale {
+    width: 48px;
+    padding-left: 16px;
+    margin-top: 4px;
+}
+
+.rocky_scale_c {
+    height: 32px;
+}
+
+.navbar-collapse {
+    width: 100%;
+}
+
+.nav-gap {
+    flex-grow: 1;
+}
+
+.lang_switch {
+    width: 24px;
+    margin-right: 4px;
+    margin-bottom: 4px;
+}
+
+body {
+    background: url(../bg.svg) fixed repeat;
+    background-size: 200px;
+}
+
+.r_content {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background-color: #00B0FF;
+    padding: 32px;
+    min-height: 320px;
+    text-align: center;
+}
+
+.r_sc {
+    text-align: left;
+    display: flex;
+    margin: 32px;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+}
+
+.r_ssc {
+    max-width: 640px;
+    margin: 0 16px 0 16px;
+}
+
+.nav_gap {
+    height: 64px;
+}
+
+.r_p {
+    height: 288px;
+    object-fit: cover;
+}
+
+.r_pf {
+    width: 384px;
+    text-align: center;
+}
+
+.r_ssf {
+    text-align: center;
+    margin-top: 16px;
+}
+
+.patting_uwu {
+    width: 288px;
+}
+
+.footer {
+    height: 256px;
+    text-align: left;
+    padding: 24px 24px 24px 24px;
+    display: flex;
+    flex-direction: column;
+}
+
+.f_links {
+    display: flex;
+    padding: 0;
+    align-items: center;
+}
+
+.f_links>* {
+    margin: 0 16px 0 0;
+}
+
+.f_links>li>a {
+    color: white;
+    text-decoration: none;
+}
+
+.f_gap {
+    flex-grow: 1;
+}
+
+.ft_gap {
+    flex-grow: 1;
+}
+
+.f_sn {
+    width: 48px;
+}
+
+.Sect1 {
+    display: flex;
+}
+
+.cpr {
+    text-align: left;
+}
+
+.nul1 {
+    margin-right: 16px;
+}
+
+.rocky_welcome {
+    width: 100%;
+    max-width: 1024px;
+}
+
+.rw_frame {
+    text-align: center;
+}
+
+.title {
+    position: absolute;
+}
+
+.title>h1>p,
+.title>p {
+    color: #00B0FF !important;
+}
+
+.title>h1 {
+    font-family: ProductSansBold;
+    font-size: 48px;
+    display: flex;
+    justify-content: center;
+}
+
+.tt {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+}
+
+.hoshi {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    margin: 0 8px 0 8px;
+}
+
+.r_hoshi {
+    animation: rotate 2s infinite linear;
+}
+
+._in_up {
+    animation: in_up 768ms;
+    position: relative;
+}
+
+._in_down {
+    position: relative;
+    animation: in_down 768ms;
+}
+
+@keyframes in_down {
+    0% {
+        opacity: 0;
+        top: 32px;
+    }
+
+    100% {
+        opacity: 100%;
+        top: 0;
+    }
+}
+
+@keyframes in_up {
+    0% {
+        opacity: 0;
+        bottom: 32px;
+    }
+
+    100% {
+        opacity: 100%;
+        bottom: 0;
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(90deg);
+    }
+
+    50% {
+        transform: rotate(180deg);
+    }
+
+    75% {
+        transform: rotate(270deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@media(max-width: 768px) {
+    .r_ssc {
+        width: auto;
+    }
+
+    .r_sc {
+        flex-direction: column-reverse;
+    }
+
+    .r_scr {
+        flex-direction: column !important;
+    }
+
+    .r_p,
+    .r_pf {
+        width: auto;
+        height: 288px;
+    }
+
+    .f_gap {
+        flex-grow: 0;
+    }
+
+    .Sect1 {
+        flex-direction: column;
+    }
+}
+
+@media(max-width: 992px) {
+    .nul1 {
+        margin-right: 0;
+    }
+
+    body {
+        background-size: 100px;
+    }
+}
+
+@media(max-width: 300px) {
+    .title>h1 {
+        font-size: 24px;
+    }
+
+    .hoshi {
+        height: 24px;
+    }
+
+    .patting_uwu {
+        height: 192px;
+        width: auto;
+    }
+
+    .r_p {
+        width: 192px;
+        height: auto;
+    }
+
+    .r_pf {
+        width: auto;
+        height: auto;
+    }
+
+    .r_content {
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+
+    .r_sc {
+        margin: 0;
+    }
+}
+
+@media(max-width: 384px) {
+    .r_pf {
+        width: auto;
+    }
+
+    .r_sc {
+        margin: 0;
+    }
+
+}

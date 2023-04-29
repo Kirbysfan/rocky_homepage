@@ -1,2 +1,4 @@
 # rocky_homepage_
-Website of Rocky, my DNAxCAT sona.
+Nyahoo! Welcome to Rocky's personal website!!!<br>
+https://kirbysfan.github.io/rocky_homepage
+
