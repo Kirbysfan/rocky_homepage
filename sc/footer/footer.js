@@ -12,7 +12,7 @@ function showFooter() {
     const la = document.createElement("li");
     la.innerHTML = '<a href="https://kirbysfan.github.io/kfan_homepage/">本家主页</a>';
     const lb = document.createElement("li");
-    lb.innerHTML = '<a href="https://kirbysfan.github.io/rocky_homepage_old/">返回旧版</a>'
+    lb.innerHTML = `<a href="https://${window.location.host}/rocky_homepage_old/">返回旧版</a>`
     const gap1 = document.createElement("div");
     gap1.className = "f_gap";
     const sn1 = document.createElement("div");
