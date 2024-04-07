@@ -10,14 +10,14 @@ function showFooter() {
     links.className = "f_links"
     links.style.listStyle = "none";
     const la = document.createElement("li");
-    la.innerHTML = '<a href="https://kirbysfan.github.io/kfan_homepage/">本家主页</a>';
+    la.innerHTML = '<a href="https://kirbysfan.github.io">本家主页</a>';
     const lb = document.createElement("li");
     lb.innerHTML = `<a href="https://${window.location.host}/rocky_homepage_old/">返回旧版</a>`
     const gap1 = document.createElement("div");
     gap1.className = "f_gap";
     const sn1 = document.createElement("div");
     sn1.className = "f_sn"
-    sn1.innerHTML = '<a href="https://twitter.com/Kirbysfan2"><img src="../icons/Twitter.svg" alt=""></a>'
+    sn1.innerHTML = '<a href="https://twitter.com/Kirbysfan2"><img src="../icons/Twitter.svg" alt=""></a><a href="https://www.instagram.com/kirbysfan2/"><img src="../icons/Instagram.svg" alt=""></a>'
     links.appendChild(la);
     links.appendChild(lb);
     sc1.appendChild(links);

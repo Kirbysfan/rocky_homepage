@@ -120,10 +120,6 @@ body {
     flex-grow: 1;
 }
 
-.f_sn {
-    width: 48px;
-}
-
 .Sect1 {
     display: flex;
 }
@@ -317,4 +313,14 @@ body {
         margin: 0;
     }
 
+}
+.f_sn>a>img{
+    height: 48px !important;
+}
+
+.f_sn>a{
+    display: inline-block;
+}
+.f_sn>a:nth-child(2){
+    margin-left: 8px;
 }
