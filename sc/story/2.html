@@ -167,35 +167,48 @@
 </html>
 
 <script>
-    document.addEventListener("contextmenu", function (e) {
-        e.preventDefault();
-    }, false);
-    document.addEventListener("selectatart", () => { return false });
-    var tryCount = 0;
-    var minimalUserResponseInMiliseconds = 200;
-    function check() {
-        console.clear();
-        before = new Date().getTime();
-        debugger;
-        after = new Date().getTime();
-        if (after - before > minimalUserResponseInMiliseconds) {
-            document.write(" Sorry, in order to prevent the arts being pirated, Developer tools and right clicks are no longer allowed on this site, please understand and cooperate. \n 很抱歉，为了防止盗图行为，本网站不再允许使用开发者工具和右键！请理解并配合。 ")
-            alert(" Sorry, in order to prevent the arts being pirated, Developer tools and right clicks are no longer allowed on this site, please understand and cooperate. \n 很抱歉，为了防止盗图行为，本网站不再允许使用开发者工具和右键！请理解并配合。 ");
-            self.location.replace(
-                window.location.protocol + window.location.href.substring(
-                    window.location.protocol.length
-                )
-            );
-        } else {
-            before = null;
-            after = null;
-            delete before;
-            delete after;
+    function antiPirate() {
+        document.addEventListener("contextmenu", function (e) {
+            e.preventDefault();
+        }, false);
+        document.body.onselectstart = () => { return false };
+        var tryCount = 0;
+        var minimalUserResponseInMiliseconds = 200;
+        function check() {
+            console.clear();
+            before = new Date().getTime();
+            debugger;
+            after = new Date().getTime();
+            if (after - before > minimalUserResponseInMiliseconds) {
+                document.write(" Sorry, in order to prevent the arts being pirated, Developer tools and right clicks are no longer allowed on this site, please understand and cooperate. \n 很抱歉，为了防止盗图行为，本网站不再允许使用开发者工具和右键！请理解并配合。 ")
+                alert(" Sorry, in order to prevent the arts being pirated, Developer tools and right clicks are no longer allowed on this site, please understand and cooperate. \n 很抱歉，为了防止盗图行为，本网站不再允许使用开发者工具和右键！请理解并配合。 ");
+                self.location.replace(
+                    window.location.protocol + window.location.href.substring(
+                        window.location.protocol.length
+                    )
+                );
+            } else {
+                before = null;
+                after = null;
+                delete before;
+                delete after;
+            }
+            setTimeout(check, 100);
         }
-        setTimeout(check, 100);
+        check();
+
     }
-    check();
-    window.onload = function () {
+    function disabledEvent(e) {
+        if (e.stopPropagation) {
+            e.stopPropagation();
+        } else if (window.event) {
+            window.event.cancelBubble = true;
+        }
+        alert(" Sorry, in order to prevent the arts being pirated, Developer tools and right clicks are no longer allowed on this site, please understand and cooperate. \n 很抱歉，为了防止盗图行为，本网站不再允许使用开发者工具和右键！请理解并配合。 ");
+        e.preventDefault();
+        return false;
+    }
+    setTimeout(function () {
         document.addEventListener("contextmenu", function (e) {
             e.preventDefault();
         }, false);
@@ -221,16 +234,10 @@
                 disabledEvent(e);
             }
         }, false);
-        function disabledEvent(e) {
-            if (e.stopPropagation) {
-                e.stopPropagation();
-            } else if (window.event) {
-                window.event.cancelBubble = true;
-            }
-            e.preventDefault();
-            return false;
-        }
-    };
+    }
+        , 0)
+
+    setTimeout(antiPirate, 0);
 
 </script>
 <script type="module" src="../../js/story_nav.js"></script>
