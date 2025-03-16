@@ -33,6 +33,73 @@
         </div>
         <div id="footer"></div>
     </div>
+    <script>
+        document.addEventListener("contextmenu", function (e) {
+            e.preventDefault();
+        }, false);
+        document.addEventListener("selectatart", () => { return false });
+        var tryCount = 0;
+        var minimalUserResponseInMiliseconds = 200;
+        function check() {
+            console.clear();
+            before = new Date().getTime();
+            debugger;
+            after = new Date().getTime();
+            if (after - before > minimalUserResponseInMiliseconds) {
+                document.write(" Sorry, in order to prevent the arts being pirated, Developer tools and right clicks are no longer allowed on this site, please understand and cooperate. \n 很抱歉，为了防止盗图行为，本网站不再允许使用开发者工具和右键！请理解并配合。 ")
+                alert(" Sorry, in order to prevent the arts being pirated, Developer tools and right clicks are no longer allowed on this site, please understand and cooperate. \n 很抱歉，为了防止盗图行为，本网站不再允许使用开发者工具和右键！请理解并配合。 ");
+                self.location.replace(
+                    window.location.protocol + window.location.href.substring(
+                        window.location.protocol.length
+                    )
+                );
+            } else {
+                before = null;
+                after = null;
+                delete before;
+                delete after;
+            }
+            setTimeout(check, 100);
+        }
+        check();
+        window.onload = function () {
+            document.addEventListener("contextmenu", function (e) {
+                e.preventDefault();
+            }, false);
+            document.addEventListener("keydown", function (e) {
+                // Ctrl+Shift+I 
+                if (e.ctrlKey && e.shiftKey && e.keyCode == 73) {
+                    disabledEvent(e);
+                }
+                // Ctrl+Shift+J 
+                if (e.ctrlKey && e.shiftKey && e.keyCode == 74) {
+                    disabledEvent(e);
+                }
+                // Ctrl+S 
+                if (e.keyCode == 83 && (navigator.platform.match("Mac") ? e.metaKey : e.ctrlKey)) {
+                    disabledEvent(e);
+                }
+                // Ctrl + U 
+                if (e.ctrlKey && e.keyCode == 85) {
+                    disabledEvent(e);
+                }
+                // F12
+                if (event.keyCode == 123) {
+                    disabledEvent(e);
+                }
+            }, false);
+            function disabledEvent(e) {
+                if (e.stopPropagation) {
+                    e.stopPropagation();
+                } else if (window.event) {
+                    window.event.cancelBubble = true;
+                }
+                e.preventDefault();
+                return false;
+            }
+        };
+
+    </script>
     <script src="navbar/navbar.js"></script>
     <script src="footer/footer.js"></script>
     <script src="../bootstrap/js/bootstrap.js"></script>
