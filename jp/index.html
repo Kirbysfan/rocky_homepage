@@ -16,7 +16,8 @@
     </div>
     <div class="nav_gap"></div>
     <div class="rw_frame">
-        <img src="../rocky_banner.webp" alt="" class="rocky_welcome _in_up" id="banner">
+        <img src="../rocky_banner.webp" alt="" class="rocky_welcome welcome_desktop _in_up">
+        <img src="../rocky_banner_p.webp" alt="" class="rocky_welcome welcome_mobile _in_up">
     </div>
     <div class="r_content">
         <div style="margin: 32px 0 32px 0;">
@@ -116,19 +117,19 @@
                 e.preventDefault();
             }, false);
             document.addEventListener("keydown", function (e) {
-                // Ctrl+Shift+I 
+                // Ctrl+Shift+I
                 if (e.ctrlKey && e.shiftKey && e.keyCode == 73) {
                     disabledEvent(e);
                 }
-                // Ctrl+Shift+J 
+                // Ctrl+Shift+J
                 if (e.ctrlKey && e.shiftKey && e.keyCode == 74) {
                     disabledEvent(e);
                 }
-                // Ctrl+S 
+                // Ctrl+S
                 if (e.keyCode == 83 && (navigator.platform.match("Mac") ? e.metaKey : e.ctrlKey)) {
                     disabledEvent(e);
                 }
-                // Ctrl + U 
+                // Ctrl + U
                 if (e.ctrlKey && e.keyCode == 85) {
                     disabledEvent(e);
                 }
@@ -146,7 +147,7 @@
     <script src="navbar/navbar.js"></script>
     <script src="footer/footer.js"></script>
     <script src="../bootstrap/js/bootstrap.js"></script>
-    <script src="../js/dynamic_banner.js"></script>
+<!--    <script src="../js/dynamic_banner.js"></script>-->
 </body>
 
 </html>

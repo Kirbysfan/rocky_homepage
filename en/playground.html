@@ -23,7 +23,7 @@
             </h1>
             <p class="_in_down">I'll be putting some interesting script I've written here!</p>
         </div>
-        <img src="../stub.svg" class="rocky_welcome" alt="" id="banner">
+        <img src="../stub.svg" class="rocky_welcome welcome_desktop" alt="" ><img src="../stub_p.svg" class="rocky_welcome welcome_mobile" alt="" >
     </div>
     <div class="r_content">
         <div id="pgList"></div>
@@ -80,19 +80,19 @@
                 e.preventDefault();
             }, false);
             document.addEventListener("keydown", function (e) {
-                // Ctrl+Shift+I 
+                // Ctrl+Shift+I
                 if (e.ctrlKey && e.shiftKey && e.keyCode == 73) {
                     disabledEvent(e);
                 }
-                // Ctrl+Shift+J 
+                // Ctrl+Shift+J
                 if (e.ctrlKey && e.shiftKey && e.keyCode == 74) {
                     disabledEvent(e);
                 }
-                // Ctrl+S 
+                // Ctrl+S
                 if (e.keyCode == 83 && (navigator.platform.match("Mac") ? e.metaKey : e.ctrlKey)) {
                     disabledEvent(e);
                 }
-                // Ctrl + U 
+                // Ctrl + U
                 if (e.ctrlKey && e.keyCode == 85) {
                     disabledEvent(e);
                 }

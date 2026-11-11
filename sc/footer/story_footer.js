@@ -33,10 +33,18 @@ function showFooter() {
     const cpr = document.createElement("div");
     const c1 = document.createElement("p");
     const c2 = document.createElement("p");
+    const c3 = document.createElement("p");
+    c3.className = "d-flex items-center"
     c1.innerHTML = "2022, 2023 Kirbysfan"
     c2.innerHTML = "喵体版权归九藏喵窝所有"
+    c3.innerHTML = `<a class="icp" href="https://beian.miit.gov.cn/">鲁ICP备2026067301号</a>
+          <span style="margin-left: 8px; display: flex;align-items: center;gap: 2px">
+            <img style="height: 20px;" src="../../icons/mps.png" alt="">
+            <a class="icp" href="https://beian.mps.gov.cn/#/query/webSearch?code=37150202001175" rel="noreferrer" target="_blank">鲁公网安备37150202001175号</a>
+          </span>`
     cpr.appendChild(c1);
     cpr.appendChild(c2);
+    cpr.appendChild(c3);
     footer_main.appendChild(cpr);
     //#endregion
     //#endregion
